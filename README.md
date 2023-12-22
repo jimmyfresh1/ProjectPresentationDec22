@@ -18,7 +18,7 @@ For presenting my project for the CodingDojo WebFundamentals stack
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="presentation-images\pencil-and-paper-icon.png" alt="Logo" width="70" height="80">
   </a>
 
   <h3 align="center">Best-README-Template</h3>
@@ -155,8 +155,11 @@ Jeremiah Fernandez / James Fern - jamesfern14@gmail.com
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [Best README Template](https://github.com/othneildrew/Best-README-Template)
-* [CSS Notebook Paper](https://codepen.io/designcouch/pen/bGvzKE)
+* [CSS Notebook Paper](https://codepen.io/designcouch/pen/bGvzKE
+* Project Icon by DALL-E via ChatGPT. No link as of yet because sharing conversations with image generation is not supported by ChatGPT. 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
 
