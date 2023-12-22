@@ -30,6 +30,7 @@ For presenting my project for the CodingDojo WebFundamentals stack
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#butwhy">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -77,6 +78,24 @@ This project is made entirely with basic front-end concepts right now. As such, 
 There is no setup involved. The tool is meant to be used the second you open the page. In the future, added capabilities will hopefully not undercut this, but if data persistency is achieved through the use of JSON this may (but hopefully won't) change. 
 
 
+
+<!-- Screenshots for Presentation Use -->
+## But Why?
+<div>
+    <img src="\presentation-images\google-sheets-2" alt="google sheets">
+    <img src="\presentation-images\google-sheets-3" alt="google sheets" >
+    <img src="\presentation-images\obsidian-headings" alt="headers" >
+    <img src="\presentation-images\obsidian-canvas alt=" alt="canvas" >
+    <img src="\presentation-images\excalidraw.png" alt="excalidraw" >
+</div>
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -97,15 +116,6 @@ Will fill out later.
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- Screenshots for Presentation Use -->
-## Why Have I Made This?
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 
