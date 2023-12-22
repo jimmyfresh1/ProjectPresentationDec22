@@ -82,10 +82,10 @@ There is no setup involved. The tool is meant to be used the second you open the
 <!-- Screenshots for Presentation Use -->
 ## But Why?
 <div>
-    <img src="\presentation-images\google-sheets-2" alt="google sheets">
-    <img src="\presentation-images\google-sheets-3" alt="google sheets" >
-    <img src="\presentation-images\obsidian-headings" alt="headers" >
-    <img src="\presentation-images\obsidian-canvas alt=" alt="canvas" >
+    <img src="\presentation-images\google-sheets-2.png" alt="google sheets">
+    <img src="\presentation-images\google-sheets-3.png" alt="google sheets" >
+    <img src="\presentation-images\obsidian-headings.png" alt="headers" >
+    <img src="\presentation-images\obsidian-canvas.png" alt=" alt="canvas" >
     <img src="\presentation-images\excalidraw.png" alt="excalidraw" >
 </div>
 
