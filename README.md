@@ -18,7 +18,7 @@ For presenting my project for the CodingDojo WebFundamentals stack
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="presentation-images\pencil-and-paper-icon.png" alt="Logo" width="70" height="80">
+    <img src="\presentation-images\project-icon.png" alt="Logo" width="70" height="80">
   </a>
 
   <h3 align="center">Best-README-Template</h3>
