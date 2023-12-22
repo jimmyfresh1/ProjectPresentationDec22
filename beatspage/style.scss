@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+  background: #f1f1f1;
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  }
+
+
+
+p:hover {
+    cursor: url(./images/pencil-edit.png) 4 32, auto;
+}
+
+#export-pdf {
+    height:50px;
+    width:50px;
+}
+
+// addButton is not in my html doc but is added in via javascript
+// same goes for every succeeding button
+.add-button {
+    margin:0 0 0 0;
+    height:25px;
+    width:25px;
+    align-items:center;
+    background-color: transparent;
+    border: none;
+    opacity:0;
+
+    &:hover {
+        opacity:1;
+        cursor: url(./images/pencil-edit.png) 4 32, auto;
+    }
+    img {
+        height:20px;
+        width: 20px;
+        margin: 0 0 0 0;
+    }
+}
+
+.beat-options-container {
+    padding:0;
+    margin:0;
+    height:30px;
+    display:flex;
+    width:200px;
+
+}
+
+.beat-button-1, .beat-button-2, .beat-button-3, .rest-button-1, .rest-button-2 {
+    height:25px;
+    img {
+        height:25px;
+    }
+}
+
+
+.swing-button {
+    margin:0 0 0 0;
+    align-items:center;
+    background-color: transparent;
+    border: none;
+
+
+    &:hover {
+        cursor: url(./images/pencil-edit.png) 4 32, auto;
+    }
+    img {
+        height:20px;
+        width: 20px;
+        margin: 0 0 0 0;
+    }
+}
+
+.beat-button {
+    margin:0 0 0 0;
+    align-items:center;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+        cursor: url(./images/pencil-edit.png) 4 32, auto;
+    }
+    img {
+        height:20px;
+        width: 20px;
+        margin: 0 0 0 0;
+    }
+}
+
+.admonition-button {
+    margin:0 0 0 0;
+    align-items:center;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+        cursor: url(./images/pencil-edit.png) 4 32, auto;
+    }
+    img {
+        height:20px;
+        width: 20px;
+        margin: 0 0 0 0;
+    }
+}
+
+
+
+
+#passage-paper {
+    width: 960px;
+    height: 2000px;
+    background: linear-gradient(to bottom, white 29px, #00b0d7 1px);
+    margin: 50px auto;
+    background-size: 100% 30px;
+    position: relative;
+    padding-top: 150px;
+    padding-left: 160px;
+    padding-right: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .2), 0px 0px 6px rgba(0, 0, 0, .2);
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 140px;
+        height: 100%;
+        width: 1px;
+        background: #db4034;
+    }
+    header {
+        height: 150px;
+        width: 100%;
+        background: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display:flex;
+
+        h1 {
+            font-size: 60px;
+            line-height: 60px;
+            padding: 50px 20px 0 160px;
+        }
+    }
+    #canvas {
+        position:absolute;
+    }
+    #main-text {
+        position:absolute;
+        margin-top: 67px;
+        font-size: 20px;
+        line-height: 30px;
+        word-wrap:break-word;
+        z-index:100;
+
+            p {
+                margin: 0 0 30px 0;
+                
+
+            }
+
+            .swing {
+                color:red;
+                background-color:rgba(255, 255, 255, 0.233);
+                font-weight:bold;
+                font-size:30px;
+                text-decoration:underline;
+                font-family: 'Delius', cursive;
+                position:relative;
+                bottom:5px;
+
+            }
+
+            .beat1{
+                margin: 0 0 0 0;
+                background-color:rgba(255, 255, 255, 0.233);
+                &:before {
+                    content: "♪"; // Replace with your desired symbol
+                    // Additional styling for the symbol, if needed
+                    color: #000; // Example color
+                    // You can add more styling properties here
+
+                }
+            }
+            .beat2{
+                &:before {
+                    background-color:rgba(255, 255, 255, 0.233);
+                    content: "♩  "; // Replace with your desired symbol
+                    // Additional styling for the symbol, if needed
+                    color: #000; // Example color
+                    // You can add more styling properties here
+                }
+            }
+            .beat3{
+                background-color:rgba(255, 255, 255, 0.233);
+                margin: 0 0 60px 0;
+                &:before {
+                    content: "𝅗𝅥    "; // Replace with your desired symbol
+                    // Additional styling for the symbol, if needed
+                    color: #000; // Example color
+                    // You can add more styling properties here
+                }
+            }
+            .rest1{
+                background-color:rgba(255, 255, 255, 0.233);
+                &:before {
+                    content: "𝄽 "; // Replace with your desired symbol
+                    // Additional styling for the symbol, if needed
+                    color: #000; // Example color
+                    // You can add more styling properties here
+                }
+            }
+            .rest2{
+                margin: 0 0 60px 0;
+                background-color:rgba(255, 255, 255, 0.233);
+                &:before {
+                    content: "𝄼    "; // Replace with your desired symbol
+                    // Additional styling for the symbol, if needed
+                    color: #000; // Example color
+                    // You can add more styling properties here
+                }
+            }
+            .admonition{
+                color: #008f77; // Example color
+                // You can add more styling properties here
+                background-color:rgba(229, 255, 0, 0.548);
+                font-family: 'Delius', cursive;
+                width:fit-content;
+                &:before {
+                    content: "★"; // Replace with your desired symbol
+                    // Additional styling for the symbol, if needed
+
+
+                }
+            }
+        }
+    }
+
+
+
+

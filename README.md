@@ -81,6 +81,8 @@ There is no setup involved. The tool is meant to be used the second you open the
 
 <!-- Screenshots for Presentation Use -->
 ## But Why?
+
+Will edit with commentary later. 
 <div>
     <img src="\presentation-images\google-sheets-2.png" alt="google sheets">
     <img src="\presentation-images\google-sheets-3.png" alt="google sheets" >
