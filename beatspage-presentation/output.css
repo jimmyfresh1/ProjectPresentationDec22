@@ -110,7 +110,7 @@ p:hover {
 
 #passage-paper {
   width: 960px;
-  height: 2000px;
+  height: 3000px;
   background: linear-gradient(to bottom, white 29px, #00b0d7 1px);
   margin: 50px auto;
   background-size: 100% 30px;
@@ -162,6 +162,7 @@ p:hover {
   margin: 0 0 30px 0;
 }
 #passage-paper #main-text .swing {
+  margin: 0 0 0 0;
   color: red;
   background-color: rgba(255, 255, 255, 0.233);
   font-weight: bold;
@@ -215,6 +216,46 @@ p:hover {
 }
 #passage-paper #main-text .admonition:before {
   content: "★";
+}
+#passage-paper #main-text .chess {
+  color: #741100;
+  margin: 0 0 120px 0;
+  background-color: rgba(255, 255, 255, 0.233);
+  font-family: "Delius", cursive;
+  width: fit-content;
+}
+#passage-paper #main-text .chess:before {
+  content: "♞c6 x♙e4  ";
+}
+#passage-paper #main-text .chess2 {
+  color: #741100;
+  margin: 0 0 120px 0;
+  background-color: rgba(255, 255, 255, 0.233);
+  font-family: "Delius", cursive;
+  width: fit-content;
+}
+#passage-paper #main-text .chess2:before {
+  content: "♕d1 x♟d5 ";
+}
+#passage-paper #main-text .check {
+  color: #39b400;
+  margin: 0 0 30px 0;
+  background-color: rgba(255, 255, 255, 0.233);
+  font-family: "Delius", cursive;
+  width: fit-content;
+}
+#passage-paper #main-text .check:before {
+  content: "✓";
+}
+#passage-paper #main-text .cross {
+  color: #ff2600;
+  margin: 0 0 30px 0;
+  background-color: rgba(255, 255, 255, 0.233);
+  font-family: "Delius", cursive;
+  width: fit-content;
+}
+#passage-paper #main-text .cross:before {
+  content: "✗";
 }
 
 /*# sourceMappingURL=output.css.map */
