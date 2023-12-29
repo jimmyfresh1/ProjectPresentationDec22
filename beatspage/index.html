@@ -11,9 +11,14 @@
 
             <div id="passage-paper">
                 <header>
-                    <h1 contenteditable="true">The Wave Speech</h1>
+                    <h1 contenteditable="true">New Features</h1>
                     <button id="print-pdf">Print to PDF</button>
                     <button onclick=drawToggle(this) id="drawModeToggle">DrawModeOff</button>
+                    <button onclick=saveState() id="save">Save</button>
+                    <button onclick=loadState()  id="load">Load</button>
+                    <button onclick=exportState()  id="export">Export</button>
+                    <input type="file" id="importJson" style="display: none;">
+                    <button id="importButton">Import JSON</button>
                 </header>
                 <canvas id="canvas" width = "960" height ="600" > </canvas>
                 <div id="main-text">

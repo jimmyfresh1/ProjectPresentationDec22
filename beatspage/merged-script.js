@@ -209,6 +209,72 @@ document.getElementById('print-pdf').addEventListener('click', () => {
     });
 
 
+//saving function
+function saveState() {
+    // Get the entire inner HTML of the 'main-text' div
+    const mainTextContent = document.getElementById('passage-paper').innerHTML;
+
+    // Save this HTML content to local storage
+    localStorage.setItem('myOutlinerContent', mainTextContent);
+}
+
+
+function loadState() {
+    // Load the saved HTML content from local storage
+    const savedContent = localStorage.getItem('myOutlinerContent');
+
+    // If there is saved content, set it as the inner HTML of the 'main-text' div
+    if (savedContent) {
+        document.getElementById('passage-paper').innerHTML = savedContent;
+    }
+}
+
+function exportState() {
+    // Get the state from local storage
+    const state = localStorage.getItem('myOutlinerContent');
+
+    // Create a Blob from the state string
+    const blob = new Blob([state], { type: 'application/json' });
+
+    // Create a link element
+    const downloadLink = document.createElement('a');
+    downloadLink.download = 'myOutlinerState.json';
+    downloadLink.href = window.URL.createObjectURL(blob);
+    downloadLink.style.display = 'none';
+
+    // Append the link to the DOM and trigger the download
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+
+    // Clean up
+    document.body.removeChild(downloadLink);
+    window.URL.revokeObjectURL(downloadLink.href);
+}
+
+document.getElementById('export').addEventListener('click', exportState);
+
+function importStateFromJson(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const savedState = e.target.result;
+            localStorage.setItem('myOutlinerContent', savedState);
+            loadState(); // Assuming loadState is your function to apply the state to your page
+        };
+        reader.readAsText(file);
+    }
+}
+
+// Event listener for the file input
+document.getElementById('importJson').addEventListener('change', importStateFromJson);
+
+// Trigger file input when import button is clicked
+document.getElementById('importButton').addEventListener('click', function() {
+    document.getElementById('importJson').click();
+});
+
+
 //defunct 
 
 // buttons.addEventListener('click', () => console.log("I'm here! Super here!"))
