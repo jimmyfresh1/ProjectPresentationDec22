@@ -153,7 +153,7 @@ function drawToggle(element) {
     if (element.innerText === 'DrawModeOn') {
         element.innerText = "DrawModeOff";
         drawMode = false;
-        canvas.style.zIndex = 1;
+        canvas.style.zIndex = 4;
         console.log(drawMode)
         existingSpans.forEach(insideContent => {
             console.log('Thank you for leaving me alone!')
@@ -163,7 +163,7 @@ function drawToggle(element) {
     else if (element.innerText === 'DrawModeOff') {
         element.innerText = "DrawModeOn";
         drawMode = true;
-        canvas.style.zIndex = 100;
+        canvas.style.zIndex = 2;
         console.log(drawMode)
         // buttons.forEach( button => {
         //     button.removeEventListener('click')
