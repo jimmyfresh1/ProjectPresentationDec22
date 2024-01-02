@@ -84,12 +84,12 @@ p:hover {
 
 }
 
-.beat-button-1, .beat-button-2, .beat-button-3, .rest-button-1, .rest-button-2 {
-    height:25px;
-    img {
-        height:25px;
-    }
-}
+// .beat-button-1, .beat-button-2, .beat-button-3, .rest-button-1, .rest-button-2 {
+//     height:25px;
+//     img {
+//         height:25px;
+//     }
+// }
 
 
 .swing-button {
@@ -109,7 +109,7 @@ p:hover {
     }
 }
 
-.beat-button {
+.beat-button, .beat-button-1, .beat-button-3, .rest-button-1{
     margin:0 0 0 0;
     align-items:center;
     background-color: transparent;
@@ -185,6 +185,7 @@ p:hover {
         }
     }
     #canvas {
+        user-select:none;
         position:absolute;
     }
 
@@ -192,12 +193,13 @@ p:hover {
         position: relative;
     }
     #main-text {
+
         position:absolute;
         margin-top: 67px;
         font-size: 20px;
         line-height: 30px;
         word-wrap:break-word;
-        z-index:100;
+        z-index:3;
 
             p {
                 margin: 0 0 30px 0;
@@ -229,6 +231,7 @@ p:hover {
                 }
             }
             .beat2{
+                margin: 0 0 0 0;
                 &:before {
                     background-color:rgba(255, 255, 255, 0.233);
                     content: "♩  "; // Replace with your desired symbol
@@ -239,7 +242,7 @@ p:hover {
             }
             .beat3{
                 background-color:rgba(255, 255, 255, 0.233);
-                margin: 0 0 60px 0;
+                margin: 0 0 30px 0;
                 &:before {
                     content: "𝅗𝅥    "; // Replace with your desired symbol
                     // Additional styling for the symbol, if needed

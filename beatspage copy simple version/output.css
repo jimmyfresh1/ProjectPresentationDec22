@@ -75,13 +75,6 @@ p:hover {
   width: 200px;
 }
 
-.beat-button-1, .beat-button-2, .beat-button-3, .rest-button-1, .rest-button-2 {
-  height: 25px;
-}
-.beat-button-1 img, .beat-button-2 img, .beat-button-3 img, .rest-button-1 img, .rest-button-2 img {
-  height: 25px;
-}
-
 .swing-button {
   margin: 0 0 0 0;
   align-items: center;
@@ -97,16 +90,16 @@ p:hover {
   margin: 0 0 0 0;
 }
 
-.beat-button {
+.beat-button, .beat-button-1, .beat-button-3, .rest-button-1 {
   margin: 0 0 0 0;
   align-items: center;
   background-color: transparent;
   border: none;
 }
-.beat-button:hover {
+.beat-button:hover, .beat-button-1:hover, .beat-button-3:hover, .rest-button-1:hover {
   cursor: url(./images/pencil-edit.png) 4 32, auto;
 }
-.beat-button img {
+.beat-button img, .beat-button-1 img, .beat-button-3 img, .rest-button-1 img {
   height: 20px;
   width: 20px;
   margin: 0 0 0 0;
@@ -167,6 +160,7 @@ p:hover {
   padding: 50px 20px 0 160px;
 }
 #passage-paper #canvas {
+  user-select: none;
   position: absolute;
 }
 #passage-paper #footer {
@@ -178,7 +172,7 @@ p:hover {
   font-size: 20px;
   line-height: 30px;
   word-wrap: break-word;
-  z-index: 100;
+  z-index: 3;
 }
 #passage-paper #main-text p {
   margin: 0 0 30px 0;
@@ -201,6 +195,9 @@ p:hover {
   content: "♪";
   color: #000;
 }
+#passage-paper #main-text .beat2 {
+  margin: 0 0 0 0;
+}
 #passage-paper #main-text .beat2:before {
   background-color: rgba(255, 255, 255, 0.233);
   content: "♩  ";
@@ -208,7 +205,7 @@ p:hover {
 }
 #passage-paper #main-text .beat3 {
   background-color: rgba(255, 255, 255, 0.233);
-  margin: 0 0 60px 0;
+  margin: 0 0 30px 0;
 }
 #passage-paper #main-text .beat3:before {
   content: "𝅗𝅥    ";

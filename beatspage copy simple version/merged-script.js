@@ -1,141 +1,133 @@
-function createButton (buttonClass, buttonImageSource) {
+function createButton(buttonClass, buttonImageSource) {
     console.log("I'm here!")
-    let addButton = document.createElement('button');
-    addButton.className= buttonClass;
+    let newButton = document.createElement('button');
+    newButton.className = buttonClass;
     let addIcon = document.createElement('img');
     addIcon.src = buttonImageSource;
-    addButton.appendChild(addIcon);
-    addButton.addEventListener('click', buttonPress);
-    return addButton;
-    
+    newButton.appendChild(addIcon);
+    newButton.addEventListener('click', buttonPress);
+    return newButton;
+
 }
 
 const pTags = document.querySelectorAll('#main-text p');
-pTags.forEach (notebookLine => {
+pTags.forEach(notebookLine => {
     notebookLine.appendChild(createButton('add-button', './images/add.png'));
 });
 
-pTags.forEach (notebookLine => {
+pTags.forEach(notebookLine => {
     notebookLine.appendChild(createButton('minus-button', './images/MINUS.png'));
 });
 
-const existingSpans = document.querySelectorAll ('#main-text span')
-existingSpans.forEach (insideContent=> {
+const existingSpans = document.querySelectorAll('#main-text span')
+existingSpans.forEach(insideContent => {
     console.log('I am doing my job')
-    insideContent.setAttribute ('contenteditable', 'true');
+    insideContent.setAttribute('contenteditable', 'true');
 })
 
-function buttonPress (){
-    let button= this;
-    if (drawMode === true)
-    {return}
-    else if (button.classList.contains('add-button'))
-    {
+function buttonPress() {
+    let button = this;
+    if (drawMode === true) { return }
+    else if (button.classList.contains('add-button')) {
         console.log("I'm here! Super here!")
-        lineContainer = createLineType ()
+        lineContainer = createLineType()
         button.parentNode.insertBefore(lineContainer, button);
-        button.style.display ='none';
     }
 
-    else if (button.classList.contains('minus-button'))
-    {
+    else if (button.classList.contains('minus-button')) {
         console.log("Now, we're cooking.")
         button.parentNode.remove()
     }
 
-    else if (button.classList.contains('swing-button'))
-    { 
+    else if (button.classList.contains('swing-button')) {
         console.log("Hold me!");
         createLine('swing', button);
+
     }
 
-    else if (button.classList.contains('beat-button'))
-    { 
+    else if (button.classList.contains('beat-button')) {
         console.log("This beat is cool!")
-        console.log(lineContainer);
-        beatContainer = beatType();
-        console.log(beatContainer);
-        lineContainer.parentNode.insertBefore(beatContainer, lineContainer)
-        lineContainer.remove();
-    }
-
-    else if (button.classList.contains('beat-button-1'))
-        { 
-            console.log("eighth note")
-            createLine('beat1', button);
-            beatContainer.remove();
-        }
-    else if (button.classList.contains('beat-button-2'))
-    { 
-        console.log("quarter note")
         createLine('beat2', button);
-        beatContainer.remove();
+
     }
 
-    else if (button.classList.contains('beat-button-3'))
-    { 
+    //I'm only allowing quarter notes in this version
+
+    else if (button.classList.contains('beat-button-1')) {
+        console.log("eighth note")
+        createLine('beat1', button);
+    }
+    // else if (button.classList.contains('beat-button-2'))
+    // { 
+    //     console.log("quarter note")
+    //     createLine('beat2', button);
+    //     beatContainer.remove();
+    // }
+
+    else if (button.classList.contains('beat-button-3')) {
         console.log("half note")
         createLine('beat3', button);
-        beatContainer.remove();
     }
 
-    else if (button.classList.contains('rest-button-1'))
-    { 
+    else if (button.classList.contains('rest-button-1')) {
         console.log("quarter rest")
         createLine('rest1', button);
-        beatContainer.remove();
     }
 
-    else if (button.classList.contains('rest-button-2'))
-    { 
-        console.log("half rest")
-        createLine('rest2', button);
-        beatContainer.remove();
-    }
-    
+    // else if (button.classList.contains('rest-button-2'))
+    // { 
+    //     console.log("half rest")
+    //     createLine('rest2', button);
+    //     beatContainer.remove();
+    // }
 
-    else if (button.classList.contains('admonition-button'))
-    { 
+
+    else if (button.classList.contains('admonition-button')) {
         console.log("Don't do it!")
         createLine('admonition', button);
+
     }
 }
 
 
 
-const buttons = document.querySelectorAll ('button');
+const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click', buttonPress)
 })
 
 
 
-function createLineType (){
+function createLineType() {
     let lineStyleContainer = document.createElement('div');
-    lineStyleContainer.className='line-style-container';
-    lineStyleContainer.appendChild(createButton ('swing-button', './images/swingLast.png'));
-    lineStyleContainer.appendChild(createButton ('beat-button', './images/beat-take3.png'));
-    lineStyleContainer.appendChild(createButton ('admonition-button', './images/admonition-take3.png'));
+    lineStyleContainer.className = 'line-style-container';
+    lineStyleContainer.appendChild(createButton('swing-button', './images/swingLast.png'));
+    lineStyleContainer.appendChild(createButton('beat-button', './images/beat-take3.png'));
+    lineStyleContainer.appendChild(createButton('beat-button-1', './images/eighth2.png'));
+    lineStyleContainer.appendChild(createButton('beat-button-3', './images/half2.png'));
+    lineStyleContainer.appendChild(createButton('rest-button-1', './images/rest2.png'));
+
+    lineStyleContainer.appendChild(createButton('admonition-button', './images/admonition-take3.png'));
     return lineStyleContainer;
 }
 
-function beatType () {
-    let beatOptionsContainer = document.createElement('div');
-    
-    beatOptionsContainer.className='beat-options-container';
-    beatOptionsContainer.appendChild(createButton ('beat-button-1', './images/eighth.png'));
-    beatOptionsContainer.appendChild(createButton ('beat-button-2', './images/quarter-beat.png'));
-    beatOptionsContainer.appendChild(createButton ('beat-button-3', './images/half-beat.png'));
-    beatOptionsContainer.appendChild(createButton ('rest-button-1', './images/quarter-rest.png'));
-    beatOptionsContainer.appendChild(createButton ('rest-button-2' ,  './images/half-rest.png'));
-    return beatOptionsContainer
-}
+// function beatType () {
+//     let beatOptionsContainer = document.createElement('div');
+
+//     beatOptionsContainer.className='beat-options-container';
+//     beatOptionsContainer.appendChild(createButton ('beat-button-1', './images/eighth.png'));
+//     beatOptionsContainer.appendChild(createButton ('beat-button-2', './images/quarter-beat.png'));
+//     beatOptionsContainer.appendChild(createButton ('beat-button-3', './images/half-beat.png'));
+//     beatOptionsContainer.appendChild(createButton ('rest-button-1', './images/quarter-rest.png'));
+//     beatOptionsContainer.appendChild(createButton ('rest-button-2' ,  './images/half-rest.png'));
+//     return beatOptionsContainer
+// }
 
 
-function createLine (lineClass, button){
+function createLine(lineClass, button) {
     let newLine = document.createElement('p');
-    let newSpan= document.createElement('span');
-    newSpan.setAttribute ('contenteditable', 'true');
+    let newSpan = document.createElement('span');
+    newSpan.setAttribute('contenteditable', 'true');
     newSpan.textContent = 'Click to Edit';
     newLine.className = lineClass;
     newLine.appendChild(newSpan);
@@ -148,76 +140,88 @@ function createLine (lineClass, button){
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext('2d');
-ctx.lineWidth=2
-let isPainting = false; 
-let lineWidth=2;
+ctx.lineWidth = 2
+let isPainting = false;
+let lineWidth = 2;
 let startX;
 let startY;
-var drawMode=false;
+var drawMode = false;
 console.log(drawMode)
 
 
-function drawToggle(element){
-    if (element.innerText==='DrawModeOn'){
+function drawToggle(element) {
+    if (element.innerText === 'DrawModeOn') {
         element.innerText = "DrawModeOff";
-        drawMode=false;
+        drawMode = false;
+        canvas.style.zIndex = 1;
         console.log(drawMode)
-        existingSpans.forEach (insideContent=> {
+        existingSpans.forEach(insideContent => {
             console.log('Thank you for leaving me alone!')
-            insideContent.setAttribute ('contenteditable', 'true');
+            insideContent.setAttribute('contenteditable', 'true');
         })
-}
-    else if (element.innerText === 'DrawModeOff'){
-        element.innerText ="DrawModeOn";
-        drawMode=true;
+    }
+    else if (element.innerText === 'DrawModeOff') {
+        element.innerText = "DrawModeOn";
+        drawMode = true;
+        canvas.style.zIndex = 4;
         console.log(drawMode)
         // buttons.forEach( button => {
         //     button.removeEventListener('click')
         // })
-        existingSpans.forEach (insideContent=> {
+        existingSpans.forEach(insideContent => {
             console.log('I am trying to do my job!')
-            insideContent.setAttribute ('contenteditable', 'false');
-    })
-}
+            insideContent.setAttribute('contenteditable', 'false');
+        })
+    }
 }
 
+function disableTextSelection() {
+    document.body.style.userSelect = 'none';
+}
 
+function enableTextSelection() {
+    document.body.style.userSelect = '';
+}
 
 
 canvas.addEventListener("mousedown", (e) => {
-    if (drawMode===true){
-    const rect = e.target.getBoundingClientRect();
-    isPainting = true
-    ctx.beginPath;
-    ctx.moveTo(e.clientX-rect.left, e.clientY-rect.top)
-}
+    if (drawMode === true) {
+        console.log("drawing")
+        disableTextSelection();
+        e.preventDefault();
+        const rect = e.target.getBoundingClientRect();
+        isPainting = true
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top)
+    }
     // startX=e.clientX -rect.left;
     // startY=e.clientY -rect.top;
 });
 
 const draw = (e) => {
-    if(!isPainting){
+    if (!isPainting) {
         return;
     }
-
+    e.preventDefault();
     const rect = e.target.getBoundingClientRect();
-    ctx.lineWidth=lineWidth;
-    ctx.lineTo(e.clientX-rect.left, e.clientY-rect.top)
+    ctx.lineWidth = lineWidth;
+    ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top)
     ctx.stroke();
 
-canvas.addEventListener("mouseup", (e) => {
-isPainting = false
-ctx.stroke();
-ctx.beginPath;
-});
+    canvas.addEventListener("mouseup", (e) => {
+        enableTextSelection();
+        isPainting = false;
+        ctx.stroke();
+        ctx.beginPath();
+    });
 
 
 }
-canvas.addEventListener ("mousemove", draw); 
+canvas.addEventListener("mousemove", draw);
 
 document.getElementById('print-pdf').addEventListener('click', () => {
     window.print();
-    });
+});
 
 
 //saving function
@@ -268,7 +272,7 @@ function importStateFromJson(event) {
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = function (e) {
             const savedState = e.target.result;
             localStorage.setItem('myOutlinerContent', savedState);
             loadState(); // Assuming loadState is your function to apply the state to your page
@@ -281,15 +285,15 @@ function importStateFromJson(event) {
 document.getElementById('importJson').addEventListener('change', importStateFromJson);
 
 // Trigger file input when import button is clicked
-document.getElementById('importButton').addEventListener('click', function() {
+document.getElementById('importButton').addEventListener('click', function () {
     document.getElementById('importJson').click();
 });
 
 
-//defunct 
+//defunct
 
 // buttons.addEventListener('click', () => console.log("I'm here! Super here!"))
-// buttons.onclick = 
+// buttons.onclick =
 
 // buttonPress.forEach (button =>{
 //     button.onclick=(console.log('I am still here! Really!'))
