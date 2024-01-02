@@ -149,6 +149,7 @@ var drawMode = false;
 console.log(drawMode)
 
 
+
 function drawToggle(element) {
     if (element.innerText === 'DrawModeOn') {
         element.innerText = "DrawModeOff";
@@ -228,9 +229,13 @@ document.getElementById('print-pdf').addEventListener('click', () => {
 function saveState() {
     // Get the entire inner HTML of the 'main-text' div
     const mainTextContent = document.getElementById('passage-paper').innerHTML;
+    const drawingDataUrl = canvas.toDataURL();
+
 
     // Save this HTML content to local storage
     localStorage.setItem('myOutlinerContent', mainTextContent);
+    localStorage.setItem('myCanvasDrawing', drawingDataUrl);
+
 }
 
 

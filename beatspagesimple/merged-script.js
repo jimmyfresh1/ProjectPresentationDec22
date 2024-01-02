@@ -228,20 +228,43 @@ document.getElementById('print-pdf').addEventListener('click', () => {
 function saveState() {
     // Get the entire inner HTML of the 'main-text' div
     const mainTextContent = document.getElementById('passage-paper').innerHTML;
+    const drawingDataUrl = canvas.toDataURL();
+
 
     // Save this HTML content to local storage
     localStorage.setItem('myOutlinerContent', mainTextContent);
+    localStorage.setItem('myCanvasDrawing', drawingDataUrl);
+
 }
+
 
 
 function loadState() {
     // Load the saved HTML content from local storage
     const savedContent = localStorage.getItem('myOutlinerContent');
+    const savedDrawing = localStorage.getItem('myCanvasDrawing');
 
     // If there is saved content, set it as the inner HTML of the 'main-text' div
     if (savedContent) {
         document.getElementById('passage-paper').innerHTML = savedContent;
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', buttonPress)
+        })
+
+        document.getElementById('importButton').addEventListener('click', function () {
+            document.getElementById('importJson').click();
+        });
+
     }
+    // if (savedDrawing){
+    //     const image = new Image();
+    //     image.onload = function() {
+    //         ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas before drawing the image
+    //         ctx.drawImage(image, 0, 0); // Draw the image onto the canvas
+    //     };
+    //     image.src = savedDrawing;
+    // }
 }
 
 function exportState() {
@@ -278,6 +301,15 @@ function importStateFromJson(event) {
             loadState(); // Assuming loadState is your function to apply the state to your page
         };
         reader.readAsText(file);
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', buttonPress)
+        document.getElementById('importButton').addEventListener('click', function () {
+            document.getElementById('importJson').click();
+        });
+
+        })
+
     }
 }
 
