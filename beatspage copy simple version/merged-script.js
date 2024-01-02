@@ -163,7 +163,7 @@ function drawToggle(element) {
     else if (element.innerText === 'DrawModeOff') {
         element.innerText = "DrawModeOn";
         drawMode = true;
-        canvas.style.zIndex = 4;
+        canvas.style.zIndex = 100;
         console.log(drawMode)
         // buttons.forEach( button => {
         //     button.removeEventListener('click')
